@@ -1,0 +1,27 @@
+import java.util.HashSet;
+
+/**
+ * @author msfata ProgrammingHelp
+ *
+ */
+public class Unique {
+
+	public static void main(String[] args) {
+		System.out.println(getUnique(new int[] { 3, 4, 7, 7, 6, 6 }));
+
+		System.out.println(getUnique(new int[] { 80, 80, 1000000000, 80, 80, 80, 80, 80, 80, 123456789 }));
+	}
+
+	public static int getUnique(int... inputArray) {
+		HashSet<Integer> hs = new HashSet<Integer>();
+
+		for (int i = 0; i < inputArray.length; i++) {
+			hs.add(inputArray[i]);
+		}
+		if (hs.size() > inputArray.length / 2) {
+			return inputArray.length / 2;
+		} else {
+			return hs.size();
+		}
+	}
+}
